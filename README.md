@@ -18,3 +18,67 @@ This UEFI was built following the excellent [Dortania OpenCore Install Guide](ht
 
 ## Disclaimer
 This is for teaching and personal use **only**. Hackintoshes violate the macOS EULA. **DO NOT** rely on Hackintoshes for your work! They may broke at any time (as a result of an update which broke compatibility, etc.). 
+
+## HOW-TO
+For a complete tutorial, please refer to the [Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
+
+ 1. Format a $\geq 4$ GB USB-stick in FAT-32 using the GPT partition table (use [Rufus](http://rufus.ie) for that)
+ 2. Delete the files that Rufus put in there
+ 3. In the root directory, create a folder named `com.apple.recovery.boot`
+ 4. [Download the OS X version of your choice](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html#downloading-macos)
+ 5. Copy both `BaseSystem.dmg` and `BaseSystem.chunklist` in the `com.apple.recovery.boot` directory
+ 6. Copy the `EFI` folder you downloaded from this repo in the root of your USB-stick
+ 7. Your USB-stick's directory structure should now look like this
+ 
+
+     *USB-Letter*
+    ├───EFI
+    │   ├───BOOT
+    │   └───OC
+    │       ├───ACPI
+    │       ├───Bootstrap
+    │       ├───Drivers
+    │       ├───Kexts
+    │       │   ├───SMCSuperIO.kext
+    │       │   │   └───Contents
+    │       │   │       └───MacOS
+    │       │   ├───VirtualSMC.kext
+    │       │   │   └───Contents
+    │       │   │       ├───MacOS
+    │       │   │       └───Resources
+    │       │   │           └───VirtualSMCSDK
+    │       │   ├───SMCProcessor.kext
+    │       │   │   └───Contents
+    │       │   │       └───MacOS
+    │       │   ├───Lilu.kext
+    │       │   │   └───Contents
+    │       │   │       ├───MacOS
+    │       │   │       └───Resources
+    │       │   │           ├───Library
+    │       │   │           │   └───wrappers
+    │       │   │           └───Headers
+    │       │   │               └───capstone
+    │       │   ├───WhateverGreen.kext
+    │       │   │   └───Contents
+    │       │   │       └───MacOS
+    │       │   ├───AppleALC.kext
+    │       │   │   └───Contents
+    │       │   │       └───MacOS
+    │       │   ├───IntelMausi.kext
+    │       │   │   └───Contents
+    │       │   │       └───MacOS
+    │       │   └───AirportItlwm.kext
+    │       │       └───Contents
+    │       │           └───MacOS
+    │       ├───Resources
+    │       │   ├───Audio
+    │       │   ├───Font
+    │       │   ├───Image
+    │       │   └───Label
+    │       └───Tools
+    └───com.apple.recovery.boot
+
+8. Make sure SATA-Mode is set to `AHCI` in your BIOS 
+9. Your good to boot from the stick
+
+**Please note that I don't offer technical support for this! Please refer to the guide above or google your problem!**  
