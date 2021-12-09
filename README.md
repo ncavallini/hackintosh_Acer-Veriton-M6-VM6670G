@@ -22,7 +22,7 @@ This is for teaching and personal use **only**. Hackintoshes violate the macOS E
 ## HOW-TO
 For a complete tutorial, please refer to the [Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
 
- 1. Format a $\geq 4$ GB USB-stick in FAT-32 using the GPT partition table (use [Rufus](http://rufus.ie) for that)
+ 1. Format a >=4 GB USB-stick in FAT-32 using the GPT partition table (use [Rufus](http://rufus.ie) for that)
  2. Delete the files that Rufus put in there
  3. In the root directory, create a folder named `com.apple.recovery.boot`
  4. [Download the OS X version of your choice](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html#downloading-macos)
@@ -31,7 +31,7 @@ For a complete tutorial, please refer to the [Dortania OpenCore Install Guide](h
  7. Your USB-stick's directory structure should now look like this
  
 
-     *USB-Letter*
+    ``` *USB-Letter*
     ├───EFI
     │   ├───BOOT
     │   └───OC
@@ -76,7 +76,8 @@ For a complete tutorial, please refer to the [Dortania OpenCore Install Guide](h
     │       │   ├───Image
     │       │   └───Label
     │       └───Tools
-    └───com.apple.recovery.boot
+    └───com.apple.recovery.boot 
+    ```
 
 8. Make sure SATA-Mode is set to `AHCI` in your BIOS 
 9. Your good to boot from the stick
